@@ -1,32 +1,39 @@
-import { useState } from "react";
-import ReactMarkdown from "react-markdown";
+import { useEffect, useState } from "react";
 import "./App.css";
+import axios from "axios";
+import parse from "html-react-parser"
 
 function App() {
-  //   const markdowna = `A paragraph with *emphasis* and **strong importance**.
+  const [markdown, setMarkdown] = useState("");
+  const [html, setHtml] = useState('');
 
-  // > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+  useEffect(() => {
+    const convertMarkdownToHtml = async () => {
+      try {
+        if (!markdown) {
+          return setHtml("")
+        }
+        const response = await axios.post('http://localhost:5000/api/convert', { markdown });
+        setHtml(response.data.html);
+      } catch (error) {
+        console.error('Error converting markdown to HTML:', error);
+      }
+    };
 
-  // * Lists
-  // * [ ] todo
-  // * [x] done
+    convertMarkdownToHtml();
+  }, [markdown]);
 
-  // A table:
-
-  // | a | b |
-  // | - | - |
-  // `
-  const [markdown, setMarkdown] = useState("# Markdown Preview");
   return (
 
     <section className="markdown">
       <textarea
         className="input"
         value={markdown}
+        placeholder="Type your markdown here..."
         onChange={(e) => setMarkdown(e.target.value)}
       ></textarea>
       <article className="result">
-        <ReactMarkdown>{markdown}</ReactMarkdown>
+        {parse(html)}
       </article>
     </section>
 
