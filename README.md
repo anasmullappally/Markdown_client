@@ -1,5 +1,5 @@
 
-# Real-time Markdown Editor with Live Preview
+# Real-time Markdown Editor with Live Preview - Frontend
 
 A real-time Markdown editor that converts Markdown text to HTML and displays the rendered HTML in a live preview pane.
 
@@ -7,17 +7,22 @@ A real-time Markdown editor that converts Markdown text to HTML and displays the
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Tech Stack](#techstack)
 - [Installation](#installation)
 
 ## Introduction
 
 This project is a real-time Markdown editor created using Node.js and React. It allows users to type Markdown syntax in a text input area and view the corresponding HTML output in real-time. The project includes optional syntax highlighting for better readability and a Node.js backend to simulate more complex tasks in real-world scenarios.
 
+## Tech Stack 
+
+Node, react, axios, html-react-parser, 
+
 ## Features
 
 - **Real-time Markdown to HTML Conversion**: Converts Markdown text to HTML as the user types.
 - **Live Preview**: Displays the rendered HTML output in a separate pane.
-- **Syntax Highlighting (Optional)**: Provides syntax highlighting in the Markdown editor for better readability.
+- **Syntax Highlighting**: Provides syntax highlighting in the Markdown editor for better readability.
 - **Backend Processing**: Uses a Node.js server to handle Markdown to HTML conversion.
 
 ## Installation
@@ -29,7 +34,7 @@ To get a local copy up and running, follow these steps.
 Make sure you have the following software installed:
 
 - [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/) 
 
 ### Installation Steps
 

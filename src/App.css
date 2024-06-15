@@ -86,10 +86,10 @@ blockquote ::first-letter {
   text-transform: uppercase;
 }
 pre {
-  background: #222;
+  background: gray;
   display: inline-block;
   border-radius: 0.25rem;
   padding: 1rem 2rem;
-  color: yellow;
+  color: white;
   margin-bottom: 1.5rem;
 }
